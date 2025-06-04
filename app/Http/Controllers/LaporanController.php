@@ -67,7 +67,7 @@ class LaporanController extends Controller
     $fileName = 'ticket-' . $data->kode . '.pdf';
 
     // Upload ke S3 di folder 'tickets/'
-    Storage::disk('s3')->put('tickets/' . $fileName, $pdfContent, 'public');
+    Storage::disk('s3')->put('tickets/' . $fileName, $pdfContent);
 
     // (Opsional) Ambil URL publiknya jika kamu ingin pakai nanti
     // $s3Url = Storage::disk('s3')->url('tickets/' . $fileName);
